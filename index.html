@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест</title>
+</head>
+<body>
+    <header class="main-header-wrap">
+        <div class="main-header container">
+            <div class="main-header__logotype">
+                <a href="#"><img src="img/mytour-logo.png" alt="MyTour" width="77" height="35"></a>
+            </div>
+            <nav class="main-nav">
+                <ul class="main-nav__list">
+                    <li class="main-nav__list-item"><a href="#">Моя лента</a></li>
+                    <li class="main-nav__list-item main-nav__list-item‐‐active"><a class="active">Интересы</a></li>
+                    <li class="main-nav__list-item"><a href="#">Направления</a></li>
+                    <li class="main-nav__list-item"><a href="#">Подбор тура</a></li>
+                    <li class="main-nav__list-item"><a href="#">Заявка</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="index-main">
+        <article class="main-wrap container">
+            <h1>Настройки интересов</h1>
+            <nav class="form-nav">
+                <ul class="form-nav__list">
+                    <li class="form-nav__list-item"><span>Подборка васи</span></li>
+                    <li class="form-nav__list-item form-nav__list-item--active"><span>Подборка 123</span></li>
+                    <li class="form-nav__list-item"><span>Турция 20.03</span></li>
+                    <li class="form-nav__list-item"><span>Подборка #1</span></li>
+                    <li class="form-nav__list-item"><span>Добавить подборку</span></li>
+                </ul>
+            </nav>
+            <form class="form-parameter">
+                <fieldset class="form-parameter__city">
+                    <label for="name">Название подборки</label>
+                    <input type="text" name="name-collections" id="name" placeholder="Подборка 123">
+
+                    <label for="select">Ваш город</label>
+                    <select name="city-select" id="select">
+                        <option value="stPetersburg">Санкт-Петербург</option>
+                        <option value="moscow">Москва</option>
+                        <option value="novosibirsk">Новосибирск</option>
+                        <option value="ekaterinburg">Екатеринбург</option>
+                        <option value="kazan">Казань</option>
+                    </select>
+                </fieldset>
+
+                <button type="submit">Смотреть результаты</button>
+
+                <fieldset class="form-parameter__region">
+                    <span>Юго-Восточная Азия</span>
+                    <div class="region-country thailand">Таиланд</div>
+                    <div class="region-country vietnam">Вьетнам</div>
+                    <div class="region-country indonesia">Индонезия</div>
+                    <button class="add-region">Добавить регион</button>
+                    <button class="add-country">Добавить страны</button>
+                </fieldset>
+
+                <fieldset class="form-parameter__settings">
+                    <label for="dates">Даты вылета</label>
+                    <input type="text" name="departure-dates" id="dates"
+                           placeholder="13 января, ПН - 19 января, СБ">
+
+                    <label for="days">На сколько</label>
+                    <input type="text" name="days-stay" id="days" placeholder="7 —14 ночей">
+
+                    <label for="guests">Количество гостей</label>
+                    <input type="text" name="number-guests" id="guests" placeholder="2 взрослых, 2 детей">
+
+                    <label for="cost">Стоимость тура</label>
+                    <input type="text" name="tour-cost" id="cost" placeholder="50 000 Р — 150 000 Р ">
+
+                    <label for="category">Категория отелей от</label>
+                    <input type="text" name="hotel-category" id="category">
+
+                    <label for="rating">Рейтинг TopHotels</label>
+                    <input type="text" name="rating-tophotels" id="rating" placeholder="Не ниже">
+
+                    <label for="food">Тип питания</label>
+                    <input type="text" name="type-food" id="food" placeholder="Любой">
+
+                    <label for="location">Расположение</label>
+                    <input type="text" name="location-beach" id="location" placeholder="Пляжные, 1-я линия">
+                </fieldset>
+                <button type="reset">Удалить подборку</button>
+            </form>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <div class="main-footer__copyright-address">
+            <span>Туристический проект</span>
+            <p>Москва, 1-й Щипковский переулок,д.1</p>
+            <a href="#">Показать на карте</a>
+        </div>
+        <div class="main-footer__copyright-schedule">
+            <ul>
+                <li>Время работы офиса:</li>
+                <li>Будние 10:00 — 21:00</li>
+                <li>Выходные и праздники 11:00 — 17:00</li>
+            </ul>
+        </div>
+        <div class="main-footer__feedback">
+            <a class="main-footer__feedback-tel" href="tel:+74955855555">+7 495 585 55 55</a>
+            <span>Обратная связь</span>
+        </div>
+        <div class="main-footer__social-links">
+            <a class="main-footer__social main-footer__social--vk" href="#">
+                <span class="visually-hidden">ВКонтакте</span>
+            </a>
+            <a class="main-footer__social main-footer__social--facebook" href="#">
+                <span class="visually-hidden">Facebook</span>
+            </a>
+            <a class="main-footer__social main-footer__social--instagram" href="#">
+                <span class="visually-hidden">Instagram</span>
+            </a>
+            <a class="main-footer__social main-footer__social--odnoklasniki" href="#">
+                <span class="visually-hidden">Одноклассники</span>
+            </a>
+        </div>
+        <span class="main-footer__copyright-name">Разработано командой TourAdmin&copy;2017</span>
+    </footer>
+</body>
+</html>
