@@ -53,7 +53,7 @@ $(function () {
         "prevText": "Пред",
         "nextText": "След",
         "currentText": "Сегодня",
-        "monthNames": ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"],
+        "monthNames": ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"],
         "monthNamesShort": ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
         "dayNames": ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
         "dayNamesShort": ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"],
@@ -68,9 +68,12 @@ $(function () {
     $(deperDatapicker).datepicker({
         range: 'period',
         numberOfMonths: 2,
-        dateFormat:'dd MM, D',
+        dateFormat:'dd.mm.yy',
+        monthNames: ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"],
         onSelect: function(dateText, inst, extensionRange) {
-            $(deperDatapicker).val(extensionRange.startDateText + ' - ' + extensionRange.endDateText);
+            var startDate = $.datepicker.formatDate("dd MM, D", $.datepicker.parseDate("dd.mm.yy", extensionRange.startDateText));
+            var endDate = $.datepicker.formatDate("dd MM, D", $.datepicker.parseDate("dd.mm.yy", extensionRange.endDateText));
+            $(deperDatapicker).val( startDate+ ' - ' + endDate);
         }
     });
 
