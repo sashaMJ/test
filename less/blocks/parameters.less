@@ -3,7 +3,7 @@
   padding-left: 22px;
 
   & button[type="submit"] {
-    .btn-style();
+    .btn-submit-style();
   }
 
   & button[type="submit"]::after {
@@ -38,14 +38,15 @@
 
 .parameters__city__input-wrap {
   display: inline-block;
+  vertical-align: middle;
   margin-top: 15px;
+  position: relative;
   & label {
     display: block;
     margin-bottom: 12px;
     margin-left: 18px;
   }
 
-  & select,
   & input {
     width: 190px;
     padding: 16px;
@@ -72,6 +73,7 @@
     padding: 9px 0;
     display: inline-block;
     position: relative;
+    pointer-events: none;
   }
 
   & span::after {
@@ -85,6 +87,7 @@
     right: -37px;
     font-size: 12px;
     cursor: pointer;
+    pointer-events: all;
   }
 
   &--thailand {
@@ -98,6 +101,10 @@
   &--indonesia {
     background-image: url("../../img/indonesia-flag.png");
   }
+}
+
+.parameters__region-item-hide {
+  display: none;
 }
 
 .parameters__region-btn {
@@ -126,11 +133,7 @@
 
   & input,
   & select {
-    padding-left: 16px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 1px solid #bdbdbd;
-    font-size: 15px;
+    .form-item-style();
   }
 
   & label {
@@ -139,16 +142,8 @@
     margin-left: 18px;
   }
 
-  & input[name="departure-dates"] {
+  & input[name="departure-date"] {
     width: 250px;
-  }
-
-  & input[name="days-stay"] {
-    width: 157px;
-  }
-
-  & input[name="tour-cost"] {
-    width: 247px;
   }
 
   & select[name="rating-tophotels"] {
@@ -262,5 +257,15 @@
   }
 }
 
-
-
+.city-btn-close {
+  position: absolute;
+  font-size: 32px;
+  top: 31px;
+  right: 30px;
+  width: 29px;
+  height: 43px;
+  background-color: #fff;
+  color: #bdbdbd;
+  cursor: pointer;
+  font-weight: 100;
+}

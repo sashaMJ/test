@@ -43,9 +43,14 @@
                     </div>
                     <div class="parameters__city__input-wrap">
                         <label for="select">Ваш город</label>
-                        <select name="city-select" id="select">
-                            <option>Санкт-Петербург</option>
+                        <select class="city-select" name="city-select" id="select">
+                            <option value="st.petersburg">Санкт-Петербург</option>
+                            <option value="moscow">Москва</option>
+                            <option value="kazan">Казань</option>
+                            <option value="ekaterinburg">Екатеринбург</option>
+                            <option value="sochi">Сочи</option>
                         </select>
+                        <span class="city-btn-close">&times;</span>
                     </div>
 
                     <button type="submit">Смотреть результаты</button>
@@ -65,21 +70,35 @@
 
                 <div class="parameters__settings">
                     <div class="parameters__settings__input-wrap">
-                        <label for="dates">Даты вылета</label>
-                        <input type="text" name="departure-dates" id="dates"
-                               placeholder="13 января, ПН - 19 января, СБ">
+                        <label for="departure-dates">Даты вылета</label>
+                        <input type="text" name="departure-date" id="departure-dates"
+                               placeholder="13 январь, ПТ - 19 январь, СБ">
                     </div>
                     <div class="parameters__settings__input-wrap">
                         <label for="days">На сколько</label>
-                        <input type="text" name="days-stay" id="days" placeholder="7 —14 ночей">
+                        <input type="hidden" name="from-day" id="days">
+                        <input type="hidden" name="to-day" id="night">
+                        <div class="slider-days">
+                            <span class="slider-days__amount">7 — 14 ночей</span>
+                            <div class="slider-days__range-wrap">
+                                <div class="slider-days__range"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="parameters__settings__input-wrap">
                         <label for="guests">Количество гостей</label>
                         <input type="text" name="number-guests" id="guests" placeholder="2 взрослых, 2 детей">
                     </div>
                     <div class="parameters__settings__input-wrap">
-                        <label for="cost">Стоимость тура</label>
-                        <input type="text" name="tour-cost" id="cost" placeholder="50 000 Р — 150 000 Р">
+                        <label for="to-rub">Стоимость тура</label>
+                        <input type="hidden" name="from-cost" id="from-rub">
+                        <input type="hidden" name="to-cost" id="to-rub">
+                        <div class="slider-cost">
+                            <span class="slider-cost__amount">50 000 Р — 150 000 Р</span>
+                            <div class="slider-cost__range-wrap">
+                                <div class="slider-cost__range"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="parameters__settings-stars">
@@ -162,6 +181,8 @@
             src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
             integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
             crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/jquery-datapicker-extension.js"></script>
 </body>
 </html>
