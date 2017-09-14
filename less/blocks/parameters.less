@@ -1,0 +1,266 @@
+.parameters {
+  padding-right: 12px;
+  padding-left: 22px;
+
+  & button[type="submit"] {
+    .btn-style();
+  }
+
+  & button[type="submit"]::after {
+    position: absolute;
+    background-color: white;
+    border-radius: 50px;
+    color: #ff8e41;
+    content: "\2192";
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    top: 12px;
+    right: 11px;
+  }
+}
+
+.parameters__city-advice {
+  color: @border-grey-color;
+  font-size: 12px;
+  margin-left: 30px;
+}
+
+.parameters__settings {
+  border: none;
+}
+
+.parameters__city {
+  margin-bottom: 15px;
+  padding-left: 0;
+  border: none;
+}
+
+.parameters__city__input-wrap {
+  display: inline-block;
+  margin-top: 15px;
+  & label {
+    display: block;
+    margin-bottom: 12px;
+    margin-left: 18px;
+  }
+
+  & select,
+  & input {
+    width: 190px;
+    padding: 16px;
+    margin-right: 27px;
+    border: 1px solid @border-grey-color;
+    font-size: 15px;
+  }
+}
+
+.parameters__region {
+  border: 1px solid @border-grey-color;
+  margin-top: 8px;
+}
+
+.parameters__region-location {
+  display: block;
+  padding: 5px;
+}
+
+.parameters__region-item {
+  .region-style-item();
+
+  & span {
+    padding: 9px 0;
+    display: inline-block;
+    position: relative;
+  }
+
+  & span::after {
+    position: absolute;
+    color: grey;
+    text-align: right;
+    content: "\2573";
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: -37px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  &--thailand {
+    background-image: url("../../img/thailand-flag.png");
+  }
+
+  &--vietnam {
+    background-image: url("../../img/vietnam-flag.png");
+  }
+
+  &--indonesia {
+    background-image: url("../../img/indonesia-flag.png");
+  }
+}
+
+.parameters__region-btn {
+  margin-top: 24px;
+  margin-left: 17px;
+  margin-bottom: 30px;
+}
+
+.parameters__region-btn__add-region {
+  .region-btn();
+  color: @form-nav-acive-color;
+  border: 1px solid @form-nav-acive-color;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.parameters__region-btn__add-country {
+  .region-btn();
+  background-color: @form-nav-acive-color;
+  color: white;
+}
+
+.parameters__settings__input-wrap {
+  margin-bottom: 28px;
+  position: relative;
+
+  & input,
+  & select {
+    padding-left: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 1px solid #bdbdbd;
+    font-size: 15px;
+  }
+
+  & label {
+    display: block;
+    margin-bottom: 12px;
+    margin-left: 18px;
+  }
+
+  & input[name="departure-dates"] {
+    width: 250px;
+  }
+
+  & input[name="days-stay"] {
+    width: 157px;
+  }
+
+  & input[name="tour-cost"] {
+    width: 247px;
+  }
+
+  & select[name="rating-tophotels"] {
+    position: relative;
+    width: 190px;
+  }
+
+  & select[name="type-food"] {
+    width: 140px;
+  }
+
+  & select[name="location-beach"] {
+    width: 225px;
+  }
+
+  &--rating-tophotels::after {
+    position: absolute;
+    background-image: url(../../img/spritesheet.png);
+    color: green;
+    text-align: right;
+    content: "4.0";
+    width: 40px;
+    height: 20px;
+    top: 40px;
+    left: 87px;
+    background-position-x: -60px;
+    background-position-y: -10px;
+  }
+}
+
+.parameters__settings-stars {
+  position: relative;
+  width: 163px;
+  height: 34px;
+  margin-top: 25px;
+  border: 1px solid @border-grey-color;
+  border-right: none;
+  padding-top: 14px;
+  text-align: center;
+
+  & input:checked ~ label,
+  & label,
+  & label:hover,
+  & label:hover ~ label {
+    background: url(../../img/sprite-star.png) no-repeat;
+    background-position-x: -15px;
+    background-position-y: -16px;
+  }
+
+  & input {
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
+  & label {
+    height: 20px;
+    width: 18px;
+    float: right;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    margin-right: 12px;
+  }
+
+  & label:hover ~ label,
+  & label:hover {
+    background-position-y: -64px;
+    height: 20px;
+    width: 18px;
+    background-position-x: -17px;
+  }
+
+  &::before {
+    position: absolute;
+    color: @border-grey-color;
+    font-size: 12px;
+    content: "Категория отелей от";
+    top: -25px;
+    left: 13px;
+  }
+}
+
+.parameters__settings {
+  display: flex;
+  flex-wrap: wrap;
+  & button[type="button"] {
+    position: relative;
+    background-color: transparent;
+    border: transparent;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: @btn-red-color;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  & button[type="button"]::before {
+    position: absolute;
+    background-color: @btn-red-color;
+    color: #fff;
+    border-radius: 50px;
+    content: "\2716";
+    width: 17px;
+    height: 16px;
+    left: -18px;
+    top: 42px;
+    font-size: 9px;
+  }
+}
+
+
+

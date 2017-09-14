@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Тест</title>
+    <link href="css/style.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="main-header-wrap">
@@ -23,75 +24,112 @@
     </header>
 
     <main class="index-main">
+        <h1>Настройки интересов</h1>
         <article class="main-wrap container">
-            <h1>Настройки интересов</h1>
             <nav class="form-nav">
                 <ul class="form-nav__list">
                     <li class="form-nav__list-item"><span>Подборка васи</span></li>
                     <li class="form-nav__list-item form-nav__list-item--active"><span>Подборка 123</span></li>
                     <li class="form-nav__list-item"><span>Турция 20.03</span></li>
                     <li class="form-nav__list-item"><span>Подборка #1</span></li>
-                    <li class="form-nav__list-item"><span>Добавить подборку</span></li>
+                    <li class="form-nav__list-item form-nav__list-item--add-option"><span>Добавить подборку</span></li>
                 </ul>
             </nav>
-            <form class="form-parameter">
-                <fieldset class="form-parameter__city">
-                    <label for="name">Название подборки</label>
-                    <input type="text" name="name-collections" id="name" placeholder="Подборка 123">
+            <form class="parameters">
+                <fieldset class="parameters__city">
+                    <div class="parameters__city__input-wrap">
+                        <label for="name">Название подборки</label>
+                        <input type="text" name="name-collections" id="name" placeholder="ПОДБОРКА 123">
+                    </div>
+                    <div class="parameters__city__input-wrap">
+                        <label for="select">Ваш город</label>
+                        <select name="city-select" id="select">
+                            <option>Санкт-Петербург</option>
+                        </select>
+                    </div>
 
-                    <label for="select">Ваш город</label>
-                    <select name="city-select" id="select">
-                        <option value="stPetersburg">Санкт-Петербург</option>
-                        <option value="moscow">Москва</option>
-                        <option value="novosibirsk">Новосибирск</option>
-                        <option value="ekaterinburg">Екатеринбург</option>
-                        <option value="kazan">Казань</option>
-                    </select>
+                    <button type="submit">Смотреть результаты</button>
+                </fieldset>
+                <span class="parameters__city-advice">Вы можете задать несколько стран или регионов для одной подборки</span>
+                <fieldset class="parameters__region">
+                    <span class="parameters__region-location">Юго-Восточная Азия</span>
+                    <div class="parameters__region-item parameters__region-item--thailand"><span>Таиланд</span></div>
+                    <div class="parameters__region-item parameters__region-item--vietnam"><span>Вьетнам</span></div>
+                    <div class="parameters__region-item parameters__region-item--indonesia"><span>Индонезия</span></div>
                 </fieldset>
 
-                <button type="submit">Смотреть результаты</button>
+                <div class="parameters__region-btn">
+                    <span class="parameters__region-btn__add-region">Добавить регион</span>
+                    <span class="parameters__region-btn__add-country">Добавить страны</span>
+                </div>
 
-                <fieldset class="form-parameter__region">
-                    <span>Юго-Восточная Азия</span>
-                    <div class="region-country thailand">Таиланд</div>
-                    <div class="region-country vietnam">Вьетнам</div>
-                    <div class="region-country indonesia">Индонезия</div>
-                    <button class="add-region">Добавить регион</button>
-                    <button class="add-country">Добавить страны</button>
-                </fieldset>
+                <div class="parameters__settings">
+                    <div class="parameters__settings__input-wrap">
+                        <label for="dates">Даты вылета</label>
+                        <input type="text" name="departure-dates" id="dates"
+                               placeholder="13 января, ПН - 19 января, СБ">
+                    </div>
+                    <div class="parameters__settings__input-wrap">
+                        <label for="days">На сколько</label>
+                        <input type="text" name="days-stay" id="days" placeholder="7 —14 ночей">
+                    </div>
+                    <div class="parameters__settings__input-wrap">
+                        <label for="guests">Количество гостей</label>
+                        <input type="text" name="number-guests" id="guests" placeholder="2 взрослых, 2 детей">
+                    </div>
+                    <div class="parameters__settings__input-wrap">
+                        <label for="cost">Стоимость тура</label>
+                        <input type="text" name="tour-cost" id="cost" placeholder="50 000 Р — 150 000 Р">
+                    </div>
 
-                <fieldset class="form-parameter__settings">
-                    <label for="dates">Даты вылета</label>
-                    <input type="text" name="departure-dates" id="dates"
-                           placeholder="13 января, ПН - 19 января, СБ">
+                    <div class="parameters__settings-stars">
+                        <input id="star4" type="radio" name="reviewStars" value="4">
+                        <label title="gorgeous" for="star4"></label>
 
-                    <label for="days">На сколько</label>
-                    <input type="text" name="days-stay" id="days" placeholder="7 —14 ночей">
+                        <input id="star3" type="radio" name="reviewStars" value="3">
+                        <label title="good" for="star3"></label>
 
-                    <label for="guests">Количество гостей</label>
-                    <input type="text" name="number-guests" id="guests" placeholder="2 взрослых, 2 детей">
+                        <input id="star2" type="radio" name="reviewStars" value="2">
+                        <label title="regular" for="star2"></label>
 
-                    <label for="cost">Стоимость тура</label>
-                    <input type="text" name="tour-cost" id="cost" placeholder="50 000 Р — 150 000 Р ">
+                        <input id="star1" type="radio" name="reviewStars" value="1">
+                        <label title="poor" for="star1"></label>
 
-                    <label for="category">Категория отелей от</label>
-                    <input type="text" name="hotel-category" id="category">
+                        <input id="star0" type="radio" name="reviewStars" value="0">
+                        <label title="bad" for="star0"></label>
+                    </div>
 
-                    <label for="rating">Рейтинг TopHotels</label>
-                    <input type="text" name="rating-tophotels" id="rating" placeholder="Не ниже">
-
-                    <label for="food">Тип питания</label>
-                    <input type="text" name="type-food" id="food" placeholder="Любой">
-
-                    <label for="location">Расположение</label>
-                    <input type="text" name="location-beach" id="location" placeholder="Пляжные, 1-я линия">
-                </fieldset>
-                <button type="reset">Удалить подборку</button>
+                    <div class="parameters__settings__input-wrap parameters__settings__input-wrap--rating-tophotels">
+                        <label for="rating">Рейтинг TopHotels</label>
+                        <select name="rating-tophotels" id="rating">
+                            <option>Не ниже</option>
+                            <option>Ниже</option>
+                        </select>
+                    </div>
+                    <div class="parameters__settings__input-wrap">
+                        <label for="food">Тип питания</label>
+                        <select name="type-food" id="food">
+                            <option>Любой</option>
+                            <option>Без питания</option>
+                            <option>Завтрак</option>
+                            <option>Все включено</option>
+                        </select>
+                    </div>
+                    <div class="parameters__settings__input-wrap">
+                        <label for="location">Расположение</label>
+                        <select name="location-beach" id="location">
+                            <option>Пляжные, 1-я линия</option>
+                            <option>Пляжные, 2-я линия</option>
+                            <option>Центр</option>
+                        </select>
+                    </div>
+                    <button type="button">Удалить подборку</button>
+                </div>
             </form>
         </article>
     </main>
 
-    <footer class="main-footer">
+    <footer class="main-footer container">
         <div class="main-footer__copyright-address">
             <span>Туристический проект</span>
             <p>Москва, 1-й Щипковский переулок,д.1</p>
@@ -109,20 +147,21 @@
             <span>Обратная связь</span>
         </div>
         <div class="main-footer__social-links">
-            <a class="main-footer__social main-footer__social--vk" href="#">
-                <span class="visually-hidden">ВКонтакте</span>
-            </a>
-            <a class="main-footer__social main-footer__social--facebook" href="#">
-                <span class="visually-hidden">Facebook</span>
-            </a>
-            <a class="main-footer__social main-footer__social--instagram" href="#">
-                <span class="visually-hidden">Instagram</span>
-            </a>
-            <a class="main-footer__social main-footer__social--odnoklasniki" href="#">
-                <span class="visually-hidden">Одноклассники</span>
-            </a>
+            <a class="main-footer__social main-footer__social--vk" href="#">ВКонтакте</a>
+            <a class="main-footer__social main-footer__social--facebook" href="#">Facebook</a>
+            <a class="main-footer__social main-footer__social--instagram" href="#">Instagram</a>
+            <a class="main-footer__social main-footer__social--odnoklasniki" href="#">Одноклассники</a>
         </div>
-        <span class="main-footer__copyright-name">Разработано командой TourAdmin&copy;2017</span>
+        <span class="main-footer__copyright-name">Разработано командой TourAdmin &copy; 2017</span>
     </footer>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+.form-nav {
+  padding: 1px;
+  border-bottom: 1px solid @border-grey-color;
+}
+
+.form-nav__list {
+  padding-left: 23px;
+}
+
+.form-nav__list-item {
+  display: inline-block;
+  list-style-type: none;
+  text-transform: uppercase;
+  margin-right: 35px;
+  color: @border-grey-color;
+  cursor: pointer;
+
+  &--active span {
+    padding-bottom: 13px;
+    border-bottom: 2px solid @form-nav-acive-color;
+    color: @form-nav-acive-color;
+  }
+
+  &--add-option {
+    position: relative;
+    color: @form-nav-acive-color;
+    margin-left: 10px;
+  }
+
+  &--add-option::before {
+    position: absolute;
+    background-color:  @form-nav-acive-color;
+    color: #fff;
+    border-radius: 50px;
+    content: "+";
+    width: 16px;
+    height: 16px;
+    left: -20px;
+    top: 2px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+  }
+}
