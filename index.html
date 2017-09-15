@@ -87,7 +87,33 @@
                     </div>
                     <div class="parameters__settings__input-wrap">
                         <label for="guests">Количество гостей</label>
-                        <input type="text" name="number-guests" id="guests" placeholder="2 взрослых, 2 детей">
+                        <input type="hidden" name="number-guests" id="guests">
+
+                        <div class="guests-wrap">
+                            <span class="guests-wrap__amount">2 взрослых</span>
+                            <div class="guests-wrap__select-wrap">
+                                <div class="guests-wrap__select-wrap-adults">
+                                    <span>Взрослых</span>
+                                    <select class="guests-wrap__adults" name="adults">
+                                        <option value="1">1</option>
+                                        <option selected value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                                <div class="guests-wrap__select-wrap-children">
+                                    <span>Детей</span>
+                                    <select name="children" class="guests-wrap__children">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option selected value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="parameters__settings__input-wrap">
                         <label for="to-rub">Стоимость тура</label>
@@ -121,25 +147,25 @@
                     <div class="parameters__settings__input-wrap parameters__settings__input-wrap--rating-tophotels">
                         <label for="rating">Рейтинг TopHotels</label>
                         <select name="rating-tophotels" id="rating">
-                            <option>Не ниже</option>
-                            <option>Ниже</option>
+                            <option value="higher">Выше</option>
+                            <option value="below">Ниже</option>
                         </select>
                     </div>
                     <div class="parameters__settings__input-wrap">
                         <label for="food">Тип питания</label>
                         <select name="type-food" id="food">
-                            <option>Любой</option>
-                            <option>Без питания</option>
-                            <option>Завтрак</option>
-                            <option>Все включено</option>
+                            <option value="any">Любой</option>
+                            <option value="without-food">Без питания</option>
+                            <option value="breakfast">Завтрак</option>
+                            <option value="all-inclusive">Все включено</option>
                         </select>
                     </div>
                     <div class="parameters__settings__input-wrap">
                         <label for="location">Расположение</label>
                         <select name="location-beach" id="location">
-                            <option>Пляжные, 1-я линия</option>
-                            <option>Пляжные, 2-я линия</option>
-                            <option>Центр</option>
+                            <option value="1st-line">Пляжные, 1-я линия</option>
+                            <option value="2nd-line">Пляжные, 2-я линия</option>
+                            <option value="across-road">Через дорогу</option>
                         </select>
                     </div>
                     <button type="button">Удалить подборку</button>

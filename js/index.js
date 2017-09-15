@@ -2,7 +2,7 @@ $(function () {
 
     var costSlider = $(".slider-cost__range");
     var daysSlider = $(".slider-days__range");
-    var deperDatapicker =$("#departure-dates");
+    var deperDatapicker = $("#departure-dates");
 
     $(costSlider).slider({
         range: true,
@@ -68,12 +68,12 @@ $(function () {
     $(deperDatapicker).datepicker({
         range: 'period',
         numberOfMonths: 2,
-        dateFormat:'dd.mm.yy',
+        dateFormat: 'dd.mm.yy',
         monthNames: ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"],
-        onSelect: function(dateText, inst, extensionRange) {
+        onSelect: function (dateText, inst, extensionRange) {
             var startDate = $.datepicker.formatDate("dd MM, D", $.datepicker.parseDate("dd.mm.yy", extensionRange.startDateText));
             var endDate = $.datepicker.formatDate("dd MM, D", $.datepicker.parseDate("dd.mm.yy", extensionRange.endDateText));
-            $(deperDatapicker).val( startDate+ ' - ' + endDate);
+            $(deperDatapicker).val(startDate + ' - ' + endDate);
         }
     });
 
@@ -81,12 +81,44 @@ $(function () {
         $(this).closest("div").addClass("parameters__region-item-hide");
     });
 
-   var citySelect = $('.city-select').selectize({
-       sortField:'text'
-   });
-   var citySelectize = citySelect[0].selectize;
+    var citySelect = $('.city-select').selectize({
+        sortField: 'text'
+    });
+    var citySelectize = citySelect[0].selectize;
 
     $(".city-btn-close").on("click", function () {
         citySelectize.clear()
+    });
+
+    $(".guests-wrap").on("click", function () {
+        $(this).find(".guests-wrap__select-wrap").toggleClass("slider-active");
+    });
+
+    $(".guests-wrap__select-wrap").on("click", function () {
+        return false;
+    });
+
+    var guestsSpan = $(".guests-wrap__amount");
+
+    $(".guests-wrap__adults,.guests-wrap__children").on("change", function () {
+        var adults = $(".guests-wrap__adults option:selected").val();
+        var children = $(".guests-wrap__children option:selected").val();
+
+        var text = adults + " ";
+        if (adults == 1) {
+            text += "взрослый";
+        } else {
+            text += "взрослых";
+        }
+
+        if (children != 0) {
+            text += ", " + children + " ";
+            if (children == 1) {
+                text += "ребенок";
+            } else {
+                text += "детей";
+            }
+        }
+        guestsSpan.text(text);
     });
 });

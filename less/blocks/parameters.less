@@ -195,10 +195,8 @@
   padding-top: 14px;
   text-align: center;
 
-  & input:checked ~ label,
-  & label,
-  & label:hover,
-  & label:hover ~ label {
+
+  & label {
     background: url(../../img/sprite-star.png) no-repeat;
     background-position-x: -15px;
     background-position-y: -16px;
@@ -223,7 +221,8 @@
   }
 
   & label:hover ~ label,
-  & label:hover {
+  & label:hover,
+  & input:checked ~ label {
     background-position-y: -64px;
     height: 20px;
     width: 18px;
